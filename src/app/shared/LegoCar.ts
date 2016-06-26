@@ -137,75 +137,75 @@ export class LegoCar {
 		}
 		this.m_isTransmitting = true;
 
-        var steering = this.steering;
-        var speed = this.speed;
-        var trunkIsOpen = this.trunkIsOpen;
-        var frontLightIsEnabled = this.frontLightIsEnabled
+        var l_steering = this.steering;
+        var l_speed = this.speed;
+        var l_trunkIsOpen = this.trunkIsOpen;
+        var l_frontLightIsEnabled = this.frontLightIsEnabled
 
         Promise.all([
             this.transmitDataPromise(
                 LegoCar.STEER_CHARACTERISTIC_UUID,
-                () => { return steering != this.m_lastSentSteering; },
+                () => { return l_steering != this.m_lastSentSteering; },
                 () => {  
-					var angle = (steering * 90) / 100;
+					var angle = (l_steering * 90) / 100;
 
 					var steeringData = new Uint8Array(1);
 					steeringData[0] = Math.floor(angle);
 					
-					console.log("Sending steering (" + steering + "%)");
+					console.log("Sending steering (" + l_steering + "%)");
 
                     return steeringData;
                 },
                 () => {
-                    this.m_lastSentSteering = steering;
-                    console.log("Sent steering (" + steering + "%)");
+                    this.m_lastSentSteering = l_steering;
+                    console.log("Sent steering (" + l_steering + "%)");
                 }),
 
             this.transmitDataPromise(
                 LegoCar.SPEED_CHARACTERISTIC_UUID,
-                () => { return speed != this.m_lastSentSpeed; },
+                () => { return l_speed != this.m_lastSentSpeed; },
                 () => {  
 					var speedData = new Uint8Array(1);
-					speedData[0] = Math.floor(speed);
+					speedData[0] = Math.floor(l_speed);
 					
-					console.log("Sending speed (" + speed + "%)");
+					console.log("Sending speed (" + l_speed + "%)");
 
                     return speedData;
                 },
                 () => {
-                    this.m_lastSentSpeed = speed;
-                    console.log("Sent speed (" + speed + "%)");
+                    this.m_lastSentSpeed = l_speed;
+                    console.log("Sent speed (" + l_speed + "%)");
                 }),
                 
             this.transmitDataPromise(
                 LegoCar.TRUNK_CHARACTERISTIC_UUID,
-                () => { return this.hasTrunkFeature && trunkIsOpen != this.m_lastSentTrunkIsOpen; },
+                () => { return this.hasTrunkFeature && l_trunkIsOpen != this.m_lastSentTrunkIsOpen; },
                 () => {  
 					var trunkData = new Uint8Array(1);
-					trunkData[0] = trunkIsOpen ? 1 : 0;
+					trunkData[0] = l_trunkIsOpen ? 2 : 1;
 					
-					console.log("Sending trunk state (" + trunkIsOpen + ")");
+					console.log("Sending trunk state (" + l_trunkIsOpen + ")");
 
                     return trunkData;
                 },
                 () => {
-                    this.m_lastSentTrunkIsOpen = trunkIsOpen;
-					console.log("Sent trunk state (" + trunkIsOpen + ")");
+                    this.m_lastSentTrunkIsOpen = l_trunkIsOpen;
+					console.log("Sent trunk state (" + l_trunkIsOpen + ")");
                 }),
 
             this.transmitDataPromise(
                 LegoCar.FRONT_LIGHT_CHARACTERISTIC_UUID,
-                () => { return this.hasFrontLightFeature && frontLightIsEnabled != this.m_lastSentFrontLightIsEnabled; },
+                () => { return this.hasFrontLightFeature && l_frontLightIsEnabled != this.m_lastSentFrontLightIsEnabled; },
                 () => {  
 					var frontLightData = new Uint8Array(1);
-					frontLightData[0] = frontLightIsEnabled ? 1 : 0;
+					frontLightData[0] = l_frontLightIsEnabled ? 2 : 1;
 					
-					console.log("Sending front light state (" + frontLightIsEnabled + ")");
+					console.log("Sending front light state (" + l_frontLightIsEnabled + ")");
                     return frontLightData;
                 },
                 () => {
-                    this.m_lastSentFrontLightIsEnabled = frontLightIsEnabled;
-					console.log("Sent front light state (" + frontLightIsEnabled + ")");
+                    this.m_lastSentFrontLightIsEnabled = l_frontLightIsEnabled;
+					console.log("Sent front light state (" + l_frontLightIsEnabled + ")");
                 }),
 
                 //TODO: blink
