@@ -1,0 +1,12 @@
+<md-toolbar color="primary">
+  <span class="fill-space">LegoControl app</span>
+  <button md-raised-button color="accent" (click)="toggleConnectionStatus()">{{isConnected()?"DISCONNECT" :"CONNECT"}}</button>
+</md-toolbar>
+<div class="control-container" *ngIf="currentModel">
+  <car-control [model]="currentModel"></car-control>
+</div>
+<footer class="control-footer-container" *ngIf="currentModel">
+  <md-slide-toggle class="flexed-slide" [disabled]="!currentModel?.hasFrontLightFeature">Front Lights</md-slide-toggle>
+  <md-slide-toggle class="flexed-slide" [disabled]="!currentModel?.hasBlinkFeature">Blink</md-slide-toggle>
+  <md-slide-toggle class="flexed-slide" [disabled]="!currentModel?.hasTrunkFeature">Trunk</md-slide-toggle>
+</footer>
