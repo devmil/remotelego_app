@@ -49,18 +49,15 @@ export class LegoCar {
     }
 
     public get hasTrunkFeature() : boolean {
-        //return this.m_hasTrunkFeature;
-        return true;
+        return this.m_hasTrunkFeature;
     }
 
     public get hasFrontLightFeature() : boolean {
-        return true;
-        //return this.m_hasFrontLightFeature;
+        return this.m_hasFrontLightFeature;
     }
 
     public get hasBlinkFeature() : boolean {
-        return true;
-        //return this.m_hasBlinkFeature;
+        return this.m_hasBlinkFeature;
     }
 
     public get steering() : number {
@@ -101,6 +98,46 @@ export class LegoCar {
 
     public get blinkMode() : BlinkMode {
         return this.m_blinkMode;
+    }
+
+    public get blinkLeft() : boolean {
+        return this.m_blinkMode == BlinkMode.Left || this.m_blinkMode == BlinkMode.Both;
+    }
+
+    public set blinkLeft(blinkLeft : boolean) {
+        if(blinkLeft) {
+            if(this.m_blinkMode == BlinkMode.Off) {
+                this.blinkMode = BlinkMode.Left;
+            } else if(this.m_blinkMode == BlinkMode.Right) {
+                this.blinkMode = BlinkMode.Both;
+            }
+        } else {
+            if(this.m_blinkMode == BlinkMode.Left) {
+                this.blinkMode = BlinkMode.Off;
+            } else if(this.m_blinkMode == BlinkMode.Both) {
+                this.blinkMode = BlinkMode.Right;
+            }
+        }
+    }
+
+    public get blinkRight() : boolean {
+        return this.m_blinkMode == BlinkMode.Right || this.m_blinkMode == BlinkMode.Both;
+    }
+
+    public set blinkRight(blinkRight : boolean) {
+        if(blinkRight) {
+            if(this.m_blinkMode == BlinkMode.Off) {
+                this.blinkMode = BlinkMode.Right;
+            } else if(this.m_blinkMode == BlinkMode.Left) {
+                this.blinkMode = BlinkMode.Both;
+            }
+        } else {
+            if(this.m_blinkMode == BlinkMode.Right) {
+                this.blinkMode = BlinkMode.Off;
+            } else if(this.m_blinkMode == BlinkMode.Both) {
+                this.blinkMode = BlinkMode.Left;
+            }
+        }
     }
 
     public set blinkMode(blinkMode : BlinkMode) {
