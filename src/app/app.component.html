@@ -11,6 +11,11 @@
 </div>
 <footer class="control-footer-container" *ngIf="currentModel">
   <md-slide-toggle class="flexed-slide" [disabled]="!currentModel?.hasFrontLightFeature" [(ngModel)]="currentModel.frontLightIsEnabled">Front Lights</md-slide-toggle>
-  <md-slide-toggle class="flexed-slide" [disabled]="!currentModel?.hasBlinkFeature">Blink</md-slide-toggle>
+  <md-radio-group [disabled]="!currentModel?.hasBlinkFeature" [(ngModel)]="currentModel.blinkMode">
+    <md-radio-button value="Off">Off</md-radio-button>
+    <md-radio-button value="Right">Right</md-radio-button>
+    <md-radio-button value="Left">Left</md-radio-button>
+    <md-radio-button value="Both">Both</md-radio-button>
+  </md-radio-group>
   <md-slide-toggle class="flexed-slide" [disabled]="!currentModel?.hasTrunkFeature" [(ngModel)]="currentModel.trunkIsOpen">Trunk</md-slide-toggle>
 </footer>
