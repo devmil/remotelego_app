@@ -15,7 +15,7 @@ export class LegoCar {
 	private m_lastSentTrunkIsOpen : boolean;
 	private m_frontLightIsEnabled : boolean;
 	private m_lastSentFrontLightIsEnabled : boolean;
-    private m_blinkMode : BlinkMode;
+    private m_blinkMode : BlinkMode =  BlinkMode.Off;
     private m_lastSentBlinkMode : BlinkMode = BlinkMode.Off;
 
     private m_isInitialized : boolean = false;
@@ -100,6 +100,11 @@ export class LegoCar {
         return this.m_blinkMode;
     }
 
+    public set blinkMode(blinkMode : BlinkMode) {
+        this.m_blinkMode = blinkMode;
+        this.transmitData();
+    }
+
     public get blinkLeft() : boolean {
         return this.m_blinkMode == BlinkMode.Left || this.m_blinkMode == BlinkMode.Both;
     }
@@ -138,11 +143,6 @@ export class LegoCar {
                 this.blinkMode = BlinkMode.Left;
             }
         }
-    }
-
-    public set blinkMode(blinkMode : BlinkMode) {
-        this.m_blinkMode = blinkMode;
-        this.transmitData();
     }
 
     private updateIfDirty() {
