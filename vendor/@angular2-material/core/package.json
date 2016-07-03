@@ -2,24 +2,24 @@
   "_args": [
     [
       "@angular2-material/core@^2.0.0-alpha.5-2",
-      "/Users/michael.lamers/BitTorrent Sync/BTSync/Dev/BleExperiments/remote_lego/web_v2/lego_remote_ng2"
+      "/Users/michael.lamers/BitTorrent Sync/BTSync/Dev/BleExperiments/remote_lego/webApp"
     ]
   ],
   "_from": "@angular2-material/core@>=2.0.0-alpha.5-2 <3.0.0",
-  "_id": "@angular2-material/core@2.0.0-alpha.5-2",
+  "_id": "@angular2-material/core@2.0.0-alpha.5-3",
   "_inCache": true,
   "_installable": true,
   "_location": "/@angular2-material/core",
-  "_nodeVersion": "5.7.0",
+  "_nodeVersion": "4.1.2",
   "_npmOperationalInternal": {
     "host": "packages-16-east.internal.npmjs.com",
-    "tmp": "tmp/core-2.0.0-alpha.5-2.tgz_1464814630971_0.1296463767066598"
+    "tmp": "tmp/core-2.0.0-alpha.5-3.tgz_1467296836078_0.7530543748289347"
   },
   "_npmUser": {
     "email": "angular-core+npm@google.com",
     "name": "angular2-material"
   },
-  "_npmVersion": "3.7.5",
+  "_npmVersion": "3.8.7",
   "_phantomChildren": {},
   "_requested": {
     "name": "@angular2-material/core",
@@ -32,11 +32,11 @@
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular2-material/core/-/core-2.0.0-alpha.5-2.tgz",
-  "_shasum": "8bb9ecddc6677abae794f1173d4b80b79e45ade8",
+  "_resolved": "https://registry.npmjs.org/@angular2-material/core/-/core-2.0.0-alpha.5-3.tgz",
+  "_shasum": "57c72a6cab1dfcedadfcbfb919b385444116883c",
   "_shrinkwrap": null,
   "_spec": "@angular2-material/core@^2.0.0-alpha.5-2",
-  "_where": "/Users/michael.lamers/BitTorrent Sync/BTSync/Dev/BleExperiments/remote_lego/web_v2/lego_remote_ng2",
+  "_where": "/Users/michael.lamers/BitTorrent Sync/BTSync/Dev/BleExperiments/remote_lego/webApp",
   "bugs": {
     "url": "https://github.com/angular/material2/issues"
   },
@@ -45,8 +45,8 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "8bb9ecddc6677abae794f1173d4b80b79e45ade8",
-    "tarball": "https://registry.npmjs.org/@angular2-material/core/-/core-2.0.0-alpha.5-2.tgz"
+    "shasum": "57c72a6cab1dfcedadfcbfb919b385444116883c",
+    "tarball": "https://registry.npmjs.org/@angular2-material/core/-/core-2.0.0-alpha.5-3.tgz"
   },
   "homepage": "https://github.com/angular/material2#readme",
   "keywords": [
@@ -66,8 +66,8 @@
   "name": "@angular2-material/core",
   "optionalDependencies": {},
   "peerDependencies": {
-    "@angular/common": "^2.0.0-rc.1",
-    "@angular/core": "^2.0.0-rc.1"
+    "@angular/common": "^2.0.0-rc.3",
+    "@angular/core": "^2.0.0-rc.3"
   },
   "readme": "ERROR: No README data found!",
   "repository": {
@@ -76,5 +76,5 @@
   },
   "scripts": {},
   "typings": "./core.d.ts",
-  "version": "2.0.0-alpha.5-2"
+  "version": "2.0.0-alpha.5-3"
 }

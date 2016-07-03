@@ -1,16 +1,11 @@
 // TODO(jelbourn): Measure perf benefits for translate3d and will-change.
 // TODO(jelbourn): Figure out if anchor hover underline actually happens in any browser.
 
-@import "button-base";
+@import 'button-base';
 
 // TODO(kara): Replace attribute selectors with class selectors when possible
 [md-button] {
   @extend %md-button-base;
-
-  &:hover, &.md-button-focus {
-    background-color: md-color($md-foreground, base, 0.12);
-    @include md-button-theme('background-color', 0.12);
-  }
 
   &[disabled]:hover {
     &.md-primary, &.md-accent, &.md-warn, &:hover {
@@ -28,7 +23,7 @@
 }
 
 [md-mini-fab] {
-  @include md-fab($md-mini-fab-size, $md-mini-fab-padding)
+  @include md-fab($md-mini-fab-size, $md-mini-fab-padding);
 }
 
 [md-icon-button] {
@@ -43,14 +38,15 @@
   line-height: $md-icon-button-line-height;
   border-radius: $md-icon-button-border-radius;
 
-  &.md-button-focus {
-    background-color: md-color($md-foreground, base, 0.12);
-    @include md-button-theme('background-color', 0.12);
-  }
-
   .md-button-wrapper > * {
     vertical-align: middle;
   }
+}
+
+// Only flat buttons and icon buttons (not raised or fabs) have a hover style.
+[md-button]:hover, [md-icon-button]:hover {
+  // Use the same visual treatment for hover as for focus.
+  @include md-button-focus();
 }
 
 // Applies a clearer border for high-contrast mode (a11y)

@@ -1,7 +1,7 @@
 
-@import "variables";
-@import "elevation";
-@import "default-theme";   // TODO: Remove this
+@import 'variables';
+@import 'elevation';
+@import 'default-theme';   // TODO: Remove this
 
 $md-card-default-padding: 24px !default;
 $md-card-mobile-padding: 24px 16px !default;
@@ -17,6 +17,7 @@ md-card {
   border-radius: $md-card-border-radius;
   font-family: $md-font-family;
   background: md-color($md-background, card);
+  color: md-color($md-foreground, base);
 }
 
 md-card:hover {
@@ -215,7 +216,7 @@ md-card-header md-card-subtitle:not(:first-child) {
 
 // xl image should always have 16px on top.
 // when it's the first el, it'll need to remove 8px from default card padding of 24px
-.md-card > [md-card-xl-image]:first-child{
+.md-card > [md-card-xl-image]:first-child {
   margin-top: -8px;
 }
 

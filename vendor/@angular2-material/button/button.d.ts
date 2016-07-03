@@ -11,6 +11,8 @@ export declare class MdButton {
     color: string;
     _updateColor(newColor: string): void;
     _setElementColor(color: string, isAdd: boolean): void;
+    /** TODO(hansl): e2e test this function. */
+    focus(): void;
 }
 export declare class MdAnchor extends MdButton {
     _disabled: boolean;

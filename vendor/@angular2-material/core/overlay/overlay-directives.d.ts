@@ -3,6 +3,15 @@ import { Overlay } from './overlay';
 import { OverlayRef } from './overlay-ref';
 import { ConnectionPositionPair } from './position/connected-position';
 /**
+ * Directive applied to an element to make it usable as an origin for an Overlay using a
+ * ConnectedPositionStrategy.
+ */
+export declare class OverlayOrigin {
+    private _elementRef;
+    constructor(_elementRef: ElementRef);
+    elementRef: ElementRef;
+}
+/**
  * Directive to facilitate declarative creation of an Overlay using a ConnectedPositionStrategy.
  */
 export declare class ConnectedOverlayDirective implements OnInit, OnDestroy {
@@ -21,14 +30,5 @@ export declare class ConnectedOverlayDirective implements OnInit, OnDestroy {
     private _createOverlay();
     /** Destroys the overlay created by this directive. */
     private _destroyOverlay();
-}
-/**
- * Directive applied to an element to make it usable as an origin for an Overlay using a
- * ConnectedPositionStrategy.
- */
-export declare class OverlayOrigin {
-    private _elementRef;
-    constructor(_elementRef: ElementRef);
-    elementRef: ElementRef;
 }
 export declare const OVERLAY_DIRECTIVES: (typeof ConnectedOverlayDirective | typeof OverlayOrigin)[];

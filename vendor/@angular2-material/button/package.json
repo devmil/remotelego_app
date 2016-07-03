@@ -2,24 +2,24 @@
   "_args": [
     [
       "@angular2-material/button@^2.0.0-alpha.5-2",
-      "/Users/michael.lamers/BitTorrent Sync/BTSync/Dev/BleExperiments/remote_lego/web_v2/lego_remote_ng2"
+      "/Users/michael.lamers/BitTorrent Sync/BTSync/Dev/BleExperiments/remote_lego/webApp"
     ]
   ],
   "_from": "@angular2-material/button@>=2.0.0-alpha.5-2 <3.0.0",
-  "_id": "@angular2-material/button@2.0.0-alpha.5-2",
+  "_id": "@angular2-material/button@2.0.0-alpha.5-3",
   "_inCache": true,
   "_installable": true,
   "_location": "/@angular2-material/button",
-  "_nodeVersion": "5.7.0",
+  "_nodeVersion": "4.1.2",
   "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/button-2.0.0-alpha.5-2.tgz_1464814617027_0.005377965280786157"
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/button-2.0.0-alpha.5-3.tgz_1467296821713_0.5296763963997364"
   },
   "_npmUser": {
     "email": "angular-core+npm@google.com",
     "name": "angular2-material"
   },
-  "_npmVersion": "3.7.5",
+  "_npmVersion": "3.8.7",
   "_phantomChildren": {},
   "_requested": {
     "name": "@angular2-material/button",
@@ -32,11 +32,11 @@
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular2-material/button/-/button-2.0.0-alpha.5-2.tgz",
-  "_shasum": "5b63f804a64b4ff275768dd15754b3842a2d0692",
+  "_resolved": "https://registry.npmjs.org/@angular2-material/button/-/button-2.0.0-alpha.5-3.tgz",
+  "_shasum": "a5ae8117c98c0fb0ab7603b3a84075b6b7a4e0ca",
   "_shrinkwrap": null,
   "_spec": "@angular2-material/button@^2.0.0-alpha.5-2",
-  "_where": "/Users/michael.lamers/BitTorrent Sync/BTSync/Dev/BleExperiments/remote_lego/web_v2/lego_remote_ng2",
+  "_where": "/Users/michael.lamers/BitTorrent Sync/BTSync/Dev/BleExperiments/remote_lego/webApp",
   "bugs": {
     "url": "https://github.com/angular/material2/issues"
   },
@@ -45,8 +45,8 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "5b63f804a64b4ff275768dd15754b3842a2d0692",
-    "tarball": "https://registry.npmjs.org/@angular2-material/button/-/button-2.0.0-alpha.5-2.tgz"
+    "shasum": "a5ae8117c98c0fb0ab7603b3a84075b6b7a4e0ca",
+    "tarball": "https://registry.npmjs.org/@angular2-material/button/-/button-2.0.0-alpha.5-3.tgz"
   },
   "homepage": "https://github.com/angular/material2#readme",
   "keywords": [
@@ -69,7 +69,7 @@
   "name": "@angular2-material/button",
   "optionalDependencies": {},
   "peerDependencies": {
-    "@angular2-material/core": "2.0.0-alpha.5-2"
+    "@angular2-material/core": "2.0.0-alpha.5-3"
   },
   "readme": "ERROR: No README data found!",
   "repository": {
@@ -78,5 +78,5 @@
   },
   "scripts": {},
   "typings": "./button.d.ts",
-  "version": "2.0.0-alpha.5-2"
+  "version": "2.0.0-alpha.5-3"
 }

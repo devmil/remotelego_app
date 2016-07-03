@@ -1,4 +1,4 @@
-import { ElementRef, Renderer } from '@angular/core';
+import { ElementRef, Renderer, AfterContentInit } from '@angular/core';
 import { ControlValueAccessor } from '@angular/common';
 import { Observable } from 'rxjs/Observable';
 export declare const MD_SLIDE_TOGGLE_VALUE_ACCESSOR: any;
@@ -6,7 +6,7 @@ export declare class MdSlideToggleChange {
     source: MdSlideToggle;
     checked: boolean;
 }
-export declare class MdSlideToggle implements ControlValueAccessor {
+export declare class MdSlideToggle implements AfterContentInit, ControlValueAccessor {
     private _elementRef;
     private _renderer;
     private onChange;
@@ -16,6 +16,7 @@ export declare class MdSlideToggle implements ControlValueAccessor {
     private _color;
     private _hasFocus;
     private _isMousedown;
+    private _isInitialized;
     disabled: boolean;
     name: string;
     id: string;
@@ -26,6 +27,8 @@ export declare class MdSlideToggle implements ControlValueAccessor {
     change: Observable<MdSlideToggleChange>;
     getInputId: () => string;
     constructor(_elementRef: ElementRef, _renderer: Renderer);
+    /** TODO: internal */
+    ngAfterContentInit(): void;
     /**
      * Implemented as part of ControlValueAccessor.
      * TODO: internal

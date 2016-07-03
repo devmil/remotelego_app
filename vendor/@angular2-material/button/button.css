@@ -44,6 +44,8 @@
  * This mixin should be applied to elements whose elevation values will change depending on their
  * context (e.g. when active or disabled).
  */
+/** Applies a property to an md-button element for each of the supported palettes. */
+/** Applies a focus style to an md-button element for each of the supported palettes. */
 [md-raised-button], [md-fab], [md-mini-fab], [md-button], [md-icon-button] {
   box-sizing: border-box;
   position: relative;
@@ -79,14 +81,30 @@
     color: rgba(0, 0, 0, 0.38); }
   [disabled][md-raised-button], [disabled][md-fab], [disabled][md-mini-fab], [disabled][md-button], [disabled][md-icon-button] {
     cursor: default; }
+  .md-button-focus[md-raised-button]::after, .md-button-focus[md-fab]::after, .md-button-focus[md-mini-fab]::after, .md-button-focus[md-button]::after, .md-button-focus[md-icon-button]::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.12);
+    border-radius: inherit;
+    pointer-events: none; }
+  .md-button-focus.md-primary[md-raised-button]::after, .md-button-focus.md-primary[md-fab]::after, .md-button-focus.md-primary[md-mini-fab]::after, .md-button-focus.md-primary[md-button]::after, .md-button-focus.md-primary[md-icon-button]::after {
+    background-color: rgba(0, 150, 136, 0.12); }
+  .md-button-focus.md-accent[md-raised-button]::after, .md-button-focus.md-accent[md-fab]::after, .md-button-focus.md-accent[md-mini-fab]::after, .md-button-focus.md-accent[md-button]::after, .md-button-focus.md-accent[md-icon-button]::after {
+    background-color: rgba(156, 39, 176, 0.12); }
+  .md-button-focus.md-warn[md-raised-button]::after, .md-button-focus.md-warn[md-fab]::after, .md-button-focus.md-warn[md-mini-fab]::after, .md-button-focus.md-warn[md-button]::after, .md-button-focus.md-warn[md-icon-button]::after {
+    background-color: rgba(244, 67, 54, 0.12); }
 
 [md-raised-button], [md-fab], [md-mini-fab] {
   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
   background-color: #fafafa;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
-  -webkit-transition: background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+  -webkit-transition: background 400ms cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 400ms cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); }
   .md-primary[md-raised-button], .md-primary[md-fab], .md-primary[md-mini-fab] {
     color: white; }
   .md-accent[md-raised-button], .md-accent[md-fab], .md-accent[md-mini-fab] {
@@ -105,29 +123,8 @@
     background-color: rgba(0, 0, 0, 0.12); }
   [md-raised-button]:active, [md-fab]:active, [md-mini-fab]:active {
     box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); }
-  .md-button-focus[md-raised-button], .md-button-focus[md-fab], .md-button-focus[md-mini-fab] {
-    background-color: rgba(0, 0, 0, 0.12); }
-    .md-button-focus.md-primary[md-raised-button], .md-button-focus.md-primary[md-fab], .md-button-focus.md-primary[md-mini-fab] {
-      background-color: #00897b; }
-    .md-button-focus.md-accent[md-raised-button], .md-button-focus.md-accent[md-fab], .md-button-focus.md-accent[md-mini-fab] {
-      background-color: #8e24aa; }
-    .md-button-focus.md-warn[md-raised-button], .md-button-focus.md-warn[md-fab], .md-button-focus.md-warn[md-mini-fab] {
-      background-color: #e53935; }
-    .md-button-focus.md-primary[disabled][md-raised-button], .md-button-focus.md-primary[disabled][md-fab], .md-button-focus.md-primary[disabled][md-mini-fab], .md-button-focus.md-accent[disabled][md-raised-button], .md-button-focus.md-accent[disabled][md-fab], .md-button-focus.md-accent[disabled][md-mini-fab], .md-button-focus.md-warn[disabled][md-raised-button], .md-button-focus.md-warn[disabled][md-fab], .md-button-focus.md-warn[disabled][md-mini-fab], .md-button-focus[disabled][disabled][md-raised-button], .md-button-focus[disabled][disabled][md-fab], .md-button-focus[disabled][disabled][md-mini-fab] {
-      background-color: rgba(0, 0, 0, 0.12); }
   [disabled][md-raised-button], [disabled][md-fab], [disabled][md-mini-fab] {
     box-shadow: none; }
-
-[md-button]:hover, [md-button].md-button-focus {
-  background-color: rgba(0, 0, 0, 0.12); }
-  [md-button]:hover.md-primary, [md-button].md-button-focus.md-primary {
-    background-color: rgba(0, 150, 136, 0.12); }
-  [md-button]:hover.md-accent, [md-button].md-button-focus.md-accent {
-    background-color: rgba(156, 39, 176, 0.12); }
-  [md-button]:hover.md-warn, [md-button].md-button-focus.md-warn {
-    background-color: rgba(244, 67, 54, 0.12); }
-  [md-button]:hover.md-primary[disabled], [md-button]:hover.md-accent[disabled], [md-button]:hover.md-warn[disabled], [md-button]:hover[disabled][disabled], [md-button].md-button-focus.md-primary[disabled], [md-button].md-button-focus.md-accent[disabled], [md-button].md-button-focus.md-warn[disabled], [md-button].md-button-focus[disabled][disabled] {
-    background-color: rgba(0, 0, 0, 0.12); }
 
 [md-button][disabled]:hover.md-primary, [md-button][disabled]:hover.md-accent, [md-button][disabled]:hover.md-warn, [md-button][disabled]:hover:hover {
   background-color: transparent; }
@@ -142,8 +139,6 @@
   padding: 0; }
   [md-fab] i, [md-fab] md-icon {
     padding: 16px 0; }
-  [md-fab].md-button-focus {
-    background-color: #8e24aa; }
 
 [md-mini-fab] {
   min-width: 0;
@@ -155,8 +150,6 @@
   padding: 0; }
   [md-mini-fab] i, [md-mini-fab] md-icon {
     padding: 8px 0; }
-  [md-mini-fab].md-button-focus {
-    background-color: #8e24aa; }
 
 [md-icon-button] {
   min-width: 0;
@@ -165,18 +158,28 @@
   height: 40px;
   line-height: 24px;
   border-radius: 50%; }
-  [md-icon-button].md-button-focus {
-    background-color: rgba(0, 0, 0, 0.12); }
-    [md-icon-button].md-button-focus.md-primary {
-      background-color: rgba(0, 150, 136, 0.12); }
-    [md-icon-button].md-button-focus.md-accent {
-      background-color: rgba(156, 39, 176, 0.12); }
-    [md-icon-button].md-button-focus.md-warn {
-      background-color: rgba(244, 67, 54, 0.12); }
-    [md-icon-button].md-button-focus.md-primary[disabled], [md-icon-button].md-button-focus.md-accent[disabled], [md-icon-button].md-button-focus.md-warn[disabled], [md-icon-button].md-button-focus[disabled][disabled] {
-      background-color: rgba(0, 0, 0, 0.12); }
   [md-icon-button] .md-button-wrapper > * {
     vertical-align: middle; }
+
+[md-button]:hover::after, [md-icon-button]:hover::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.12);
+  border-radius: inherit;
+  pointer-events: none; }
+
+[md-button]:hover.md-primary::after, [md-icon-button]:hover.md-primary::after {
+  background-color: rgba(0, 150, 136, 0.12); }
+
+[md-button]:hover.md-accent::after, [md-icon-button]:hover.md-accent::after {
+  background-color: rgba(156, 39, 176, 0.12); }
+
+[md-button]:hover.md-warn::after, [md-icon-button]:hover.md-warn::after {
+  background-color: rgba(244, 67, 54, 0.12); }
 
 @media screen and (-ms-high-contrast: active) {
   .md-raised-button, .md-fab, .md-mini-fab {

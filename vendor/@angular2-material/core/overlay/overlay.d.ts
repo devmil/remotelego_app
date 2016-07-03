@@ -14,10 +14,10 @@ export declare const OVERLAY_CONTAINER_TOKEN: OpaqueToken;
  * An overlay *is* a PortalHost, so any kind of Portal can be loaded into one.
  */
 export declare class Overlay {
-    private _overlayContainerElement;
     private _componentResolver;
     private _positionBuilder;
-    constructor(_overlayContainerElement: HTMLElement, _componentResolver: ComponentResolver, _positionBuilder: OverlayPositionBuilder);
+    private _overlayContainerElement;
+    constructor(overlayContainerElement: any, _componentResolver: ComponentResolver, _positionBuilder: OverlayPositionBuilder);
     /**
      * Creates an overlay.
      * @param state State to apply to the overlay.
@@ -50,7 +50,3 @@ export declare class Overlay {
 }
 /** Providers for Overlay and its related injectables. */
 export declare const OVERLAY_PROVIDERS: (typeof ViewportRuler | typeof OverlayPositionBuilder | typeof Overlay)[];
-export { OverlayState } from './overlay-state';
-export { OverlayRef } from './overlay-ref';
-export { createOverlayContainer } from './overlay-container';
-export { OVERLAY_DIRECTIVES, ConnectedOverlayDirective, OverlayOrigin } from './overlay-directives';

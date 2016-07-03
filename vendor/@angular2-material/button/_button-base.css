@@ -44,3 +44,5 @@
  * This mixin should be applied to elements whose elevation values will change depending on their
  * context (e.g. when active or disabled).
  */
+/** Applies a property to an md-button element for each of the supported palettes. */
+/** Applies a focus style to an md-button element for each of the supported palettes. */

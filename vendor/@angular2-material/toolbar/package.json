@@ -2,24 +2,24 @@
   "_args": [
     [
       "@angular2-material/toolbar@^2.0.0-alpha.5-2",
-      "/Users/michael.lamers/BitTorrent Sync/BTSync/Dev/BleExperiments/remote_lego/web_v2/lego_remote_ng2"
+      "/Users/michael.lamers/BitTorrent Sync/BTSync/Dev/BleExperiments/remote_lego/webApp"
     ]
   ],
   "_from": "@angular2-material/toolbar@>=2.0.0-alpha.5-2 <3.0.0",
-  "_id": "@angular2-material/toolbar@2.0.0-alpha.5-2",
+  "_id": "@angular2-material/toolbar@2.0.0-alpha.5-3",
   "_inCache": true,
   "_installable": true,
   "_location": "/@angular2-material/toolbar",
-  "_nodeVersion": "5.7.0",
+  "_nodeVersion": "4.1.2",
   "_npmOperationalInternal": {
     "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/toolbar-2.0.0-alpha.5-2.tgz_1464814681817_0.9310965635813773"
+    "tmp": "tmp/toolbar-2.0.0-alpha.5-3.tgz_1467296889762_0.9355081848334521"
   },
   "_npmUser": {
     "email": "angular-core+npm@google.com",
     "name": "angular2-material"
   },
-  "_npmVersion": "3.7.5",
+  "_npmVersion": "3.8.7",
   "_phantomChildren": {},
   "_requested": {
     "name": "@angular2-material/toolbar",
@@ -32,11 +32,11 @@
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular2-material/toolbar/-/toolbar-2.0.0-alpha.5-2.tgz",
-  "_shasum": "9394a10bfdd5f0d45c65d01d9d1fa5a86dd78472",
+  "_resolved": "https://registry.npmjs.org/@angular2-material/toolbar/-/toolbar-2.0.0-alpha.5-3.tgz",
+  "_shasum": "348acbc353976772733cde7b82b7d3c8cd672efe",
   "_shrinkwrap": null,
   "_spec": "@angular2-material/toolbar@^2.0.0-alpha.5-2",
-  "_where": "/Users/michael.lamers/BitTorrent Sync/BTSync/Dev/BleExperiments/remote_lego/web_v2/lego_remote_ng2",
+  "_where": "/Users/michael.lamers/BitTorrent Sync/BTSync/Dev/BleExperiments/remote_lego/webApp",
   "bugs": {
     "url": "https://github.com/angular/material2/issues"
   },
@@ -45,8 +45,8 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "9394a10bfdd5f0d45c65d01d9d1fa5a86dd78472",
-    "tarball": "https://registry.npmjs.org/@angular2-material/toolbar/-/toolbar-2.0.0-alpha.5-2.tgz"
+    "shasum": "348acbc353976772733cde7b82b7d3c8cd672efe",
+    "tarball": "https://registry.npmjs.org/@angular2-material/toolbar/-/toolbar-2.0.0-alpha.5-3.tgz"
   },
   "homepage": "https://github.com/angular/material2#readme",
   "keywords": [
@@ -68,7 +68,7 @@
   "name": "@angular2-material/toolbar",
   "optionalDependencies": {},
   "peerDependencies": {
-    "@angular2-material/core": "2.0.0-alpha.5-2"
+    "@angular2-material/core": "2.0.0-alpha.5-3"
   },
   "readme": "ERROR: No README data found!",
   "repository": {
@@ -77,5 +77,5 @@
   },
   "scripts": {},
   "typings": "./toolbar.d.ts",
-  "version": "2.0.0-alpha.5-2"
+  "version": "2.0.0-alpha.5-3"
 }
