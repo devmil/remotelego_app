@@ -147,7 +147,7 @@ export class LegoCar {
 
     private updateIfDirty() {
 		if(this.isDirty() && this.m_server.connected) {
-			window.setTimeout(() => { this.transmitData(); }, 200);
+			window.setTimeout(() => { this.transmitData(); }, 100);
 		}
 	};
 
