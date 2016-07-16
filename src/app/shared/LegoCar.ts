@@ -147,7 +147,7 @@ export class LegoCar {
 
     private updateIfDirty() {
 		if(this.isDirty() && this.m_server.connected) {
-			window.setTimeout(() => { this.transmitData(); }, 100);
+			window.setTimeout(() => { this.transmitData(); }, 0);
 		}
 	};
 
@@ -276,8 +276,11 @@ export class LegoCar {
         .catch(() => {
         })
         .then(() => {
-            this.m_isTransmitting = false;
-            this.updateIfDirty();
+            window.setTimeout(() => 
+                {             
+                    this.m_isTransmitting = false;
+                    this.updateIfDirty();
+                }, 50); //wait a bit before the next data gets sent
         });
     }
 }
