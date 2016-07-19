@@ -1,11 +1,10 @@
 :host{
     flex:1;
     display: flex;
+	padding: 0.25rem;
 }
 .directioncontrol-box{
-	margin-top: 40px;
-	margin-left: 40px;
-	background:gray;
+	background:white;
 	touch-action:none;
     pointer-events: none;
     flex:1;
