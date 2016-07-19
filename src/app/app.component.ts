@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LegoCar } from './shared/LegoCar'
+import { Utils } from './shared/Utils'
 import { CarControlComponent } from "./control/control.component"
 import { BluetoothDummy } from "./shared/BluetoothDummy"
 
@@ -19,7 +20,10 @@ export class AppComponent {
 
   constructor() {
     var nav : any = navigator;
-    //nav.bluetooth = new BluetoothDummy();
+    //when WebBluetooth isn't supported then switch to a dummy
+    if(nav.bluetooth == undefined && (Utils.androidVersion < 6) || !Utils.isChrome) {
+      nav.bluetooth = new BluetoothDummy();
+    }
     this.doesntSupportWebBluetooth = nav.bluetooth == undefined;
   }
 
