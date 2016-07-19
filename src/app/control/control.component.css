@@ -4,7 +4,7 @@
 	padding-top: 0.25rem;
 }
 
-@media (min-width: 50rem){
+@media (min-width: 30rem){
 	:host{
 		padding-top:0;
 		padding-left: 0.25rem;
