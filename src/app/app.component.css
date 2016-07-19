@@ -3,9 +3,13 @@
 }
 
 .control-container{
-    flex:1;
+    flex:3;
     display: flex;
     background:lightgray;
+}
+
+.option-container {
+    flex:1;
 }
 
 .control-footer-container{
@@ -18,4 +22,10 @@
     display: flex;
     flex-flow: column nowrap;
     flex: 1;
+}
+
+@media (min-width: 50rem){
+    :host{
+        flex-flow: row nowrap;
+    }
 }

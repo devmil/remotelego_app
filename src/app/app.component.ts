@@ -19,7 +19,10 @@ export class AppComponent {
 
   constructor() {
     var nav : any = navigator;
-    //nav.bluetooth = new BluetoothDummy();
+    if(!nav.bluetooth){
+      nav.bluetooth = new BluetoothDummy();      
+    }
+    
     this.doesntSupportWebBluetooth = nav.bluetooth == undefined;
   }
 
