@@ -1,8 +1,4 @@
 import { Component } from '@angular/core';
-import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
-import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
-import { MD_TOOLBAR_DIRECTIVES } from '@angular2-material/toolbar';
-import { MD_SLIDE_TOGGLE_DIRECTIVES } from '@angular2-material/slide-toggle';
 import { LegoCar } from './shared/LegoCar'
 import { CarControlComponent } from "./control/control.component"
 import { BluetoothDummy } from "./shared/BluetoothDummy"
@@ -13,7 +9,7 @@ import { BluetoothDummy } from "./shared/BluetoothDummy"
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  directives: [CarControlComponent, MD_TOOLBAR_DIRECTIVES, MD_BUTTON_DIRECTIVES, MD_SLIDE_TOGGLE_DIRECTIVES]
+  directives: [CarControlComponent]
 })
 export class AppComponent {
   currentDevice: any = null;
