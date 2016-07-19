@@ -23,6 +23,7 @@ export class AppComponent {
 
   constructor() {
     var nav : any = navigator;
+    //nav.bluetooth = new BluetoothDummy();
     this.doesntSupportWebBluetooth = nav.bluetooth == undefined;
   }
 
@@ -30,10 +31,8 @@ export class AppComponent {
     var serverTemp: any;
     var deviceTemp: any;
 
-    //new BluetoothDummy()
     var nav : any = navigator;
     nav.bluetooth
-
       .requestDevice({ filters: [{ services: ['40480f29-7bad-4ea5-8bf8-499405c9b324'] }] })
       .then(device => {
         deviceTemp = device;

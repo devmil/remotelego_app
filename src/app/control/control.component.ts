@@ -110,12 +110,12 @@ export class CarControlComponent implements AfterViewInit {
 		//normalize touch coordinates to match the control dimension		
 		translateX = Math.min(Math.max(translateX, 0), availableWidth);
 		translateY = Math.min(Math.max(translateY, 0), availableHeight);
-		
+
 		this.directionControlKnob.nativeElement.style.transform = 
 			"translate3d(" + (translateX) + "px," + (translateY) + "px," + "0px)";
 		
-		var xPercent = ((touch.pageX - originOffsetX) * 100) / availableWidth;
-		var yPercent = ((touch.pageY - originOffsetY) * 100) / availableHeight;
+		var xPercent = ((translateX) * 100) / availableWidth;
+		var yPercent = ((translateY) * 100) / availableHeight;
 		
 		var steer = (xPercent * 2) - 100;
 		var speed = (yPercent * 2) - 100;
