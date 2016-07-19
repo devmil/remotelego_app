@@ -1,8 +1,16 @@
 :host{
     flex:1;
     display: flex;
-	padding: 0.25rem;
+	padding-top: 0.25rem;
 }
+
+@media (min-width: 50rem){
+	:host{
+		padding-top:0;
+		padding-left: 0.25rem;
+	}
+}
+
 .directioncontrol-box{
 	background:white;
 	touch-action:none;
