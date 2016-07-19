@@ -106,13 +106,10 @@ export class CarControlComponent implements AfterViewInit {
 		
 		var translateX = touch.pageX - originOffsetX;
 		var translateY = touch.pageY - originOffsetY;
-		
-		if(translateX < 0
-				|| translateY < 0
-				|| translateX > availableWidth
-				|| translateY > availableHeight) {
-			return;
-		}
+
+		//normalize touch coordinates to match the control dimension		
+		translateX = Math.min(Math.max(translateX, 0), availableWidth);
+		translateY = Math.min(Math.max(translateY, 0), availableHeight);
 		
 		this.directionControlKnob.nativeElement.style.transform = 
 			"translate3d(" + (translateX) + "px," + (translateY) + "px," + "0px)";
