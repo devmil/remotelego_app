@@ -9,7 +9,7 @@
   </div>
 </div>
 <div class="option-container" *ngIf="currentModel">
-  <car-options [model]="currentModel"></car-options>
+  <car-options (onDisconnect)="doDisconnect()" [model]="currentModel"></car-options>
 </div>
 <div class="control-container" *ngIf="currentModel">
   <car-control [model]="currentModel"></car-control>

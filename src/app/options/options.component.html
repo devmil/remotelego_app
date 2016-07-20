@@ -1,14 +1,10 @@
 <div class="option-row">
-  <button class="option-btn" [disabled]="!model?.hasFrontLightFeature">Lights</button>
-  <button class="option-btn" [disabled]="!model?.hasTrunkFeature">Trunk</button>
-  <button class="option-btn option-btn-disconnect">Disconnect</button>
+  <button class="option-btn" [disabled]="!model?.hasFrontLightFeature" (click)="model.frontLightIsEnabled = !model.frontLightIsEnabled">Lights</button>
+  <button class="option-btn" [disabled]="!model?.hasTrunkFeature" (click)="model.trunkIsOpen = !model.trunkIsOpen">Trunk</button>
+  <button class="option-btn option-btn-disconnect" (click)="disconnect()">Disconnect</button>
 </div>
 <div class="option-row">
-  <button class="option-btn" [disabled]="!model?.hasBlinkFeature">Left</button>
+  <button class="option-btn" [disabled]="!model?.hasBlinkFeature" (click)="model.blinkLeft = !model.blinkLeft">Left</button>
   <button class="option-btn" [disabled]="!model?.hasBlinkFeature">Blink</button>
-  <button class="option-btn" [disabled]="!model?.hasBlinkFeature">Right</button>
+  <button class="option-btn" [disabled]="!model?.hasBlinkFeature" (click)="model.blinkRight = !model.blinkRight">Right</button>
 </div>
-<!--<md-slide-toggle class="flexed-slide" [disabled]="!currentModel?.hasFrontLightFeature" [(ngModel)]="currentModel.frontLightIsEnabled">Lights</md-slide-toggle>
-    <md-slide-toggle class="flexed-slide" [disabled]="!currentModel?.hasBlinkFeature" [(ngModel)]="currentModel.blinkLeft">left</md-slide-toggle>
-    <md-slide-toggle class="flexed-slide" [disabled]="!currentModel?.hasBlinkFeature" [(ngModel)]="currentModel.blinkRight">right</md-slide-toggle>
-    <md-slide-toggle class="flexed-slide" [disabled]="!currentModel?.hasTrunkFeature" [(ngModel)]="currentModel.trunkIsOpen">Trunk</md-slide-toggle>-->
