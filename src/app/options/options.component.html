@@ -1,3 +1,14 @@
-<p>
-  options works!
-</p>
+<div class="option-row">
+  <button class="option-btn" [disabled]="!model?.hasFrontLightFeature">Lights</button>
+  <button class="option-btn" [disabled]="!model?.hasTrunkFeature">Trunk</button>
+  <button class="option-btn option-btn-disconnect">Disconnect</button>
+</div>
+<div class="option-row">
+  <button class="option-btn" [disabled]="!model?.hasBlinkFeature">Left</button>
+  <button class="option-btn" [disabled]="!model?.hasBlinkFeature">Blink</button>
+  <button class="option-btn" [disabled]="!model?.hasBlinkFeature">Right</button>
+</div>
+<!--<md-slide-toggle class="flexed-slide" [disabled]="!currentModel?.hasFrontLightFeature" [(ngModel)]="currentModel.frontLightIsEnabled">Lights</md-slide-toggle>
+    <md-slide-toggle class="flexed-slide" [disabled]="!currentModel?.hasBlinkFeature" [(ngModel)]="currentModel.blinkLeft">left</md-slide-toggle>
+    <md-slide-toggle class="flexed-slide" [disabled]="!currentModel?.hasBlinkFeature" [(ngModel)]="currentModel.blinkRight">right</md-slide-toggle>
+    <md-slide-toggle class="flexed-slide" [disabled]="!currentModel?.hasTrunkFeature" [(ngModel)]="currentModel.trunkIsOpen">Trunk</md-slide-toggle>-->

@@ -10,15 +10,7 @@
 </div>
 <div class="option-container" *ngIf="currentModel">
   <car-options [model]="currentModel"></car-options>
-  <div class="control-footer-container">
-    TODO
-    <!--<md-slide-toggle class="flexed-slide" [disabled]="!currentModel?.hasFrontLightFeature" [(ngModel)]="currentModel.frontLightIsEnabled">Lights</md-slide-toggle>
-    <md-slide-toggle class="flexed-slide" [disabled]="!currentModel?.hasBlinkFeature" [(ngModel)]="currentModel.blinkLeft">left</md-slide-toggle>
-    <md-slide-toggle class="flexed-slide" [disabled]="!currentModel?.hasBlinkFeature" [(ngModel)]="currentModel.blinkRight">right</md-slide-toggle>
-    <md-slide-toggle class="flexed-slide" [disabled]="!currentModel?.hasTrunkFeature" [(ngModel)]="currentModel.trunkIsOpen">Trunk</md-slide-toggle>-->
-  </div>
 </div>
-
 <div class="control-container" *ngIf="currentModel">
   <car-control [model]="currentModel"></car-control>
 </div>
