@@ -1,7 +1,16 @@
-<div class="option-container">
-  <span class="fill-space">LegoControl app</span>
-  <button *ngIf="!doesntSupportWebBluetooth" md-raised-button color="accent" (click)="toggleConnectionStatus()">{{isConnected()?"DISCONNECT" :"CONNECT"}}</button>
-  <div class="control-footer-container" *ngIf="currentModel">
+<div class="start-container" *ngIf="!currentModel">
+  <div *ngIf="doesntSupportWebBluetooth" style="align: center">
+    <div>WebBluetooth isn't available!</div>
+    <div><b>For Google Chrome:</b><br />Set the WebBluetooth flag to 'enabled': <br /> <code>chrome://flags/#enable-web-bluetooth</code></div>
+  </div>
+  <div class="start-content" *ngIf="!doesntSupportWebBluetooth">
+    <span class="fill-space">LegoControl app</span>
+    <button md-raised-button color="accent" (click)="toggleConnectionStatus()">{{isConnected()?"DISCONNECT" :"CONNECT"}}</button>
+  </div>
+</div>
+<div class="option-container" *ngIf="currentModel">
+  <car-options [model]="currentModel"></car-options>
+  <div class="control-footer-container">
     TODO
     <!--<md-slide-toggle class="flexed-slide" [disabled]="!currentModel?.hasFrontLightFeature" [(ngModel)]="currentModel.frontLightIsEnabled">Lights</md-slide-toggle>
     <md-slide-toggle class="flexed-slide" [disabled]="!currentModel?.hasBlinkFeature" [(ngModel)]="currentModel.blinkLeft">left</md-slide-toggle>
@@ -9,10 +18,7 @@
     <md-slide-toggle class="flexed-slide" [disabled]="!currentModel?.hasTrunkFeature" [(ngModel)]="currentModel.trunkIsOpen">Trunk</md-slide-toggle>-->
   </div>
 </div>
-<div *ngIf="doesntSupportWebBluetooth" style="align: center">
-  <div>WebBluetooth isn't available!</div>
-  <div><b>For Google Chrome:</b><br />Set the WebBluetooth flag to 'enabled': <br /> <code>chrome://flags/#enable-web-bluetooth</code></div>
-</div>
+
 <div class="control-container" *ngIf="currentModel">
   <car-control [model]="currentModel"></car-control>
 </div>

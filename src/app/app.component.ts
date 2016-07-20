@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { LegoCar } from './shared/LegoCar'
-import { Utils } from './shared/Utils'
-import { CarControlComponent } from "./control/control.component"
-import { BluetoothDummy } from "./shared/BluetoothDummy"
+import { LegoCar } from './shared/LegoCar';
+import { Utils } from './shared/Utils';
+import { CarControlComponent } from "./control/control.component";
+import { CarOptionsComponent} from "./options/options.component";
+import { BluetoothDummy } from "./shared/BluetoothDummy";
 
 
 @Component({
@@ -10,7 +11,7 @@ import { BluetoothDummy } from "./shared/BluetoothDummy"
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  directives: [CarControlComponent]
+  directives: [CarControlComponent, CarOptionsComponent]
 })
 export class AppComponent {
   currentDevice: any = null;

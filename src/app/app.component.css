@@ -2,6 +2,18 @@
     flex: 1 1 auto;
 }
 
+.start-container{
+    flex:1;
+    display: flex;
+    align-items: center;
+}
+
+.start-content{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
 .control-container{
     flex:3;
     display: flex;
@@ -9,20 +21,13 @@
 }
 
 .option-container {
-    flex:0 0 auto;
-    width: 150px;;
-}
-
-.control-footer-container{
-    background:darkgray;
-    display: flex;
-    justify-content: space-around;
+    flex:1;
 }
 
 :host{
     display: flex;
     flex-flow: column nowrap;
-    flex: 1;
+    flex: 3;
 }
 
 @media (min-width: 30rem){
@@ -31,6 +36,6 @@
     }
 
     .control-container{
-        flex:2;
+        flex:1;
     }
 }
