@@ -27,6 +27,7 @@ var barrels = [
     'app',
     'app/shared',
     'app/control',
+    'app/options',
 ];
 var cliSystemConfigPackages = {};
 barrels.forEach(function (barrelName) {

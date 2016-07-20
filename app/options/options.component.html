@@ -1,0 +1,10 @@
+<div class="option-row">
+  <button class="option-btn" [disabled]="!model?.hasFrontLightFeature" (click)="model.frontLightIsEnabled = !model.frontLightIsEnabled">Lights</button>
+  <button class="option-btn" [disabled]="!model?.hasTrunkFeature" (click)="model.trunkIsOpen = !model.trunkIsOpen">Trunk</button>
+  <button class="option-btn option-btn-disconnect" (click)="disconnect()">Disconnect</button>
+</div>
+<div class="option-row">
+  <button class="option-btn" [disabled]="!model?.hasBlinkFeature" (click)="model.blinkLeft = !model.blinkLeft">Left</button>
+  <button class="option-btn" [disabled]="!model?.hasBlinkFeature">Blink</button>
+  <button class="option-btn" [disabled]="!model?.hasBlinkFeature" (click)="model.blinkRight = !model.blinkRight">Right</button>
+</div>
