@@ -13,7 +13,7 @@ export class Utils {
         }
         var userAgent: string = navigator.userAgent.toLowerCase();
 
-        var match = userAgent.match("/android\\s([0-9\\.]*)/)");
+        var match = userAgent.match("android\\s([0-9\\.]*)");
         return match ? parseFloat(match[0]) : 0;
     }
 }
