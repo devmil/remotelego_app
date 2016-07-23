@@ -22,6 +22,7 @@
 
 .option-container {
     flex:1;
+    background: var(--option-container-back-color);
     display: flex;
 }
 
