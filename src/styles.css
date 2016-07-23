@@ -7,6 +7,9 @@
     --primary-text-color:    #212121;
     --secondary-text-color:  #727272;
     --divider-color:         #B6B6B6;
+
+    --option-container-back-color: #FFFFFF;
+    --button-shadow-color:   #000000;
 }
 
 html, body{
