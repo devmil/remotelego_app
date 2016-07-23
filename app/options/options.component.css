@@ -10,23 +10,32 @@
 }
 
 .option-btn{
-    cursor: pointer;
-    background: none;
-    border: 1px solid black;
-    border-radius: 10px;
-    color: inherit;
-    /* cursor: default; */
-    font: inherit;
-    line-height: normal;
-    overflow: visible;
-    padding: 0;
-    outline: none;
-    -webkit-appearance: button; /* for input */
-    -webkit-user-select: none; /* for button */
-    -moz-user-select: none;
-    -ms-user-select: none;
-    flex:1;
-    margin:0.1rem;
+ cursor: pointer;
+ margin: 5px;
+ flex:1;
+ border:1px solid black;
+ color: #ffffff;
+ border-radius: 3px 3px 3px 3px;
+ -webkit-border-radius: 3px 3px 3px 3px;
+ -moz-border-radius: 3px 3px 3px 3px;
+ font-family: Verdana;
+ width: auto;
+ height: auto;
+ font-size: 16px;
+ padding: 10px 40px;
+ box-shadow: 1px 1px 3px 0 #000000;
+ -moz-box-shadow: 1px 1px 3px 0 #000000;
+ -webkit-box-shadow: 1px 1px 3px 0 #000000;
+ text-shadow: 0 1px 2px #000000;
+ background-color: var(--light-primary-color);
+}
+.option-btn:hover, .option-btn:active{
+ border:1px solid black;
+ color: #ffffff;
+ box-shadow: 0 0 0 0 #000000;
+ -moz-box-shadow: 0 0 0 0 #000000;
+ -webkit-box-shadow: 0 0 0 0 #000000;
+ background-color: var(--dark-primary-color);
 }
 
 .option-btn-disconnect{
