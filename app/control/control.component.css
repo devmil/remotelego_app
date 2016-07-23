@@ -12,7 +12,11 @@
 }
 
 .directioncontrol-box{
-	background:white;
+	background: white; /* For browsers that do not support gradients */
+  	background: -webkit-radial-gradient(circle, #B2EBF2,#00BCD4); /* Safari 5.1 to 6.0 */
+  	background: -o-radial-gradient(circle, #B2EBF2, #00BCD4); /* For Opera 11.6 to 12.0 */
+  	background: -moz-radial-gradient(circle, #B2EBF2,#00BCD4); /* For Firefox 3.6 to 15 */
+  	background: radial-gradient(circle, #B2EBF2,#00BCD4); /* Standard syntax */
 	touch-action:none;
     pointer-events: none;
     flex:1;
@@ -25,7 +29,7 @@
 	-webkit-box-shadow: 0px -1px 9px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px -1px 9px 0px rgba(0,0,0,0.75);
 	 box-shadow: 0px -1px 9px 0px rgba(0,0,0,0.75);
-	background:darkgray;
+	background:#607D8B;
 	touch-action:none;
     pointer-events: none;
 }
