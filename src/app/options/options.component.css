@@ -12,16 +12,16 @@
 .option-btn{
     cursor: pointer;
     margin: 5px;
-    flex:100px;
+    flex:auto 1 0;
     border:1px solid black;
     color: #ffffff;
     border-radius: 3px 3px 3px 3px;
     -webkit-border-radius: 3px 3px 3px 3px;
     -moz-border-radius: 3px 3px 3px 3px;
     font-family: Verdana;
-    width: auto;
+    width: 80px;
     height: auto;
-    font-size: 16px;
+    font-size: 12px;
     padding: 10px 40px;
     box-shadow: 1px 1px 3px 0 var(--button-shadow-color);
     -moz-box-shadow: 1px 1px 3px 0 var(--button-shadow-color);
