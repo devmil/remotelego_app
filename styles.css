@@ -16,10 +16,22 @@ html, body{
     margin: 0;
     height: 100%;
     width:100%;
+    background: var(--default-primary-color);
 }
 
 body{
     display:flex;
+}
+
+.startup-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    align-items: center;
+}
+
+.startup-text {
+    color: var(--text-primary-color);
 }
 
 .loader {
@@ -38,5 +50,5 @@ body{
 */
 svg path,
 svg rect {
-  fill: var(--default-primary-color);
+  fill: var(--text-primary-color);
 }

@@ -1,10 +1,11 @@
 <div class="start-container" *ngIf="!currentModel">
-  <div *ngIf="doesntSupportWebBluetooth" style="align: center">
+  <div *ngIf="doesntSupportWebBluetooth">
     <div>WebBluetooth isn't available!</div>
     <div><b>For Google Chrome:</b><br />Set the WebBluetooth flag to 'enabled': <br /> <code>chrome://flags/#enable-web-bluetooth</code></div>
   </div>
   <div class="start-content" *ngIf="!doesntSupportWebBluetooth">
-    <span class="fill-space">LegoControl app</span>
+    <img src="favicon.png" height="50px" width="50px" />
+    <span class="fill-space app-title-text">LegoControl app</span>
     <button md-raised-button color="accent" (click)="toggleConnectionStatus()">{{isConnected()?"DISCONNECT" :"CONNECT"}}</button>
   </div>
 </div>
