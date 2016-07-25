@@ -3,7 +3,9 @@
   <button class="option-btn" [disabled]="!model?.hasTrunkFeature" (click)="model.trunkIsOpen = !model.trunkIsOpen">
     Trunk
   </button>
-  <button class="option-btn option-btn-disconnect" (click)="disconnect()">Close</button>
+  <button class="option-btn option-btn-disconnect" (click)="disconnect()">
+    <img class="option-btn_image" src="assets/disconnect.svg"/>
+  </button>
 </div>
 <div class="option-row">
   <button class="option-btn" [disabled]="!model?.hasBlinkFeature" (click)="model.blinkLeft = !model.blinkLeft">

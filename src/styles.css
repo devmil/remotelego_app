@@ -66,10 +66,11 @@ svg rect {
 }
 
 .connect-btn{
+    border: 2px solid #546969;
+    border-radius: 50%;
     margin-top:1rem;
     cursor: pointer;
     background: none;
-    border: 0;
     color: inherit;
     /* cursor: default; */
     font: inherit;
@@ -84,7 +85,7 @@ svg rect {
 }
 
 .connect-btn_image{
-    width: 5rem;
+    width: 8rem;
 }
 
 .connect-btn_animation{
