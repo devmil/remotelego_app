@@ -1,14 +1,16 @@
 :root {
-    --dark-primary-color:    #0097A7;
-    --default-primary-color: #00BCD4;
-    --light-primary-color:   #B2EBF2;
+    --dark-primary-color:    #00796B;
+    --default-primary-color: #009688;
+    --light-primary-color:   #B2DFDB;
     --text-primary-color:    #FFFFFF;
-    --accent-color:          #607D8B;
+    --accent-color:          #9E9E9E;
     --primary-text-color:    #212121;
     --secondary-text-color:  #727272;
     --divider-color:         #B6B6B6;
+    --control-color-from:    var(--dark-primary-color);
+    --control-color-to:      var(--light-primary-color);
 
-    --option-container-back-color: #FFFFFF;
+    --option-container-back-color: var(--control-color-to);
     --button-shadow-color:   #000000;
 }
 .root{
@@ -20,7 +22,7 @@ html, body{
     margin: 0;
     height: 100%;
     width:100%;
-    background: var(--default-primary-color);
+    background: var(--light-primary-color);
 }
 
 body{
