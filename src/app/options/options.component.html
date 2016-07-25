@@ -1,6 +1,8 @@
 <div class="option-row">
-  <button class="option-btn" [disabled]="!model?.hasFrontLightFeature" (click)="model.frontLightIsEnabled = !model.frontLightIsEnabled">Lights</button>
-  <button class="option-btn" [disabled]="!model?.hasTrunkFeature" (click)="model.trunkIsOpen = !model.trunkIsOpen">Trunk</button>
+  <button class="option-btn" [disabled]="!model?.hasFrontLightFeature" (click)="model.frontLightIsEnabled = !model.frontLightIsEnabled"><img class="option-btn_image" src="assets/lights.svg"/></button>
+  <button class="option-btn" [disabled]="!model?.hasTrunkFeature" (click)="model.trunkIsOpen = !model.trunkIsOpen">
+    Trunk
+  </button>
   <button class="option-btn option-btn-disconnect" (click)="disconnect()">Close</button>
 </div>
 <div class="option-row">
