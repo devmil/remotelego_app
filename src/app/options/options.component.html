@@ -7,7 +7,7 @@
   <button class="option-btn" [disabled]="!model?.hasBlinkFeature" (click)="model.blinkLeft = !model.blinkLeft">
     <img class="option-btn_image" src="assets/blink_left.svg"/>
   </button>
-  <button class="option-btn" [disabled]="!model?.hasBlinkFeature">
+  <button class="option-btn" [disabled]="!model?.hasBlinkFeature" (click)="model.blinkRight = model.blinkLeft = !(model.blinkLeft && model.blinkRight)">
       <img class="option-btn_image" src="assets/warninglights.svg"/>
   </button>
   <button class="option-btn" [disabled]="!model?.hasBlinkFeature" (click)="model.blinkRight = !model.blinkRight">
