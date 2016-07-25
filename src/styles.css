@@ -12,6 +12,12 @@
     --button-shadow-color:   #000000;
 }
 
+.root{
+    display: flex;
+    flex:1;
+    align-items: center;
+}
+
 html, body{
     margin: 0;
     height: 100%;
@@ -35,12 +41,9 @@ body{
 }
 
 .loader {
-  margin: 0 0 2em;
-  height: 100px;
-  width: 20%;
   text-align: center;
   padding: 1em;
-  margin: 0 auto 1em;
+  margin: 0;
   display: inline-block;
   vertical-align: top;
 }
