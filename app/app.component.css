@@ -22,7 +22,6 @@
 .control-container{
     flex:3;
     display: flex;
-    background:lightgray;
 }
 
 .option-container {
