@@ -1,5 +1,4 @@
 :host{
-    display: flex;
     flex: 1;
     flex-flow: column nowrap;
 }
@@ -7,28 +6,40 @@
 .option-row{
     flex:1;
     display: flex;
+    justify-content: space-between;
 }
 
 .option-btn{
+    display: flex;
     cursor: pointer;
     margin: 5px;
-    flex:auto 1 0;
+    /*flex:auto 1 0;*/
     border:1px solid black;
     color: #ffffff;
     border-radius: 3px 3px 3px 3px;
     -webkit-border-radius: 3px 3px 3px 3px;
     -moz-border-radius: 3px 3px 3px 3px;
     font-family: Verdana;
-    width: 80px;
-    height: auto;
+    width: 6rem;
+    height: 6rem;
+    /*height: auto;*/
     font-size: 12px;
-    padding: 10px 40px;
+    /*padding: 10px 20px;*/
     box-shadow: 1px 1px 3px 0 var(--button-shadow-color);
     -moz-box-shadow: 1px 1px 3px 0 var(--button-shadow-color);
     -webkit-box-shadow: 1px 1px 3px 0 var(--button-shadow-color);
     text-shadow: 0 1px 2px #000000;
     background-color: var(--light-primary-color);
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+        box-sizing: content-box;
 }
+
+.option-btn_image{
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .option-btn:active{
     border:1px solid black;
     color: #ffffff;
