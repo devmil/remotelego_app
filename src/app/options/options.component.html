@@ -1,7 +1,7 @@
 <div class="option-row">
   <button class="option-btn" [disabled]="!model?.hasFrontLightFeature" [ngClass]="{'option-active': model.frontLightIsEnabled}" (click)="model.frontLightIsEnabled = !model.frontLightIsEnabled"><img class="option-btn_image" src="assets/lights.svg"/></button>
   <button class="option-btn" [disabled]="!model?.hasTrunkFeature" [ngClass]="{'option-active': model.trunkIsOpen}" (click)="model.trunkIsOpen = !model.trunkIsOpen">
-    Trunk
+    <img class="option-btn_image" src="assets/trunk.svg"/>
   </button>
   <button class="option-btn option-btn-disconnect"  (click)="disconnect()">
     <img class="option-btn_image" src="assets/disconnect.svg"/>
