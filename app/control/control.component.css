@@ -13,10 +13,10 @@
 
 .directioncontrol-box{
 	background: white; /* For browsers that do not support gradients */
-  	background: -webkit-radial-gradient(circle, var(--light-primary-color),var(--default-primary-color)); /* Safari 5.1 to 6.0 */
-  	background: -o-radial-gradient(circle, var(--light-primary-color), var(--default-primary-color)); /* For Opera 11.6 to 12.0 */
-  	background: -moz-radial-gradient(circle, var(--light-primary-color),var(--default-primary-color)); /* For Firefox 3.6 to 15 */
-  	background: radial-gradient(circle, var(--light-primary-color),var(--default-primary-color)); /* Standard syntax */
+  	background: -webkit-radial-gradient(circle, var(--control-color-from) 0%,var(--control-color-to) 60%); /* Safari 5.1 to 6.0 */
+  	background: -o-radial-gradient(circle, var(--control-color-from) 0%, var(--control-color-to) 60%); /* For Opera 11.6 to 12.0 */
+  	background: -moz-radial-gradient(circle, var(--control-color-from) 0%, var(--control-color-to) 60%); /* For Firefox 3.6 to 15 */
+  	background: radial-gradient(circle, var(--control-color-from) 0%, var(--control-color-to) 60%); /* Standard syntax */
 	touch-action:none;
     pointer-events: none;
     flex:1;
