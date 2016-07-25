@@ -6,7 +6,9 @@
   <div class="start-content" *ngIf="!doesntSupportWebBluetooth">
     <img src="favicon.png" height="50px" width="50px" />
     <span class="fill-space app-title-text">LegoControl app</span>
-    <button md-raised-button color="accent" (click)="toggleConnectionStatus()">{{isConnected()?"DISCONNECT" :"CONNECT"}}</button>
+    <button class="connect-btn" (click)="toggleConnectionStatus()">
+      <img class="connect-btn_image connect-btn_animation" src="bluetooth.svg"/>
+      </button>
   </div>
 </div>
 <div class="option-container" *ngIf="currentModel">

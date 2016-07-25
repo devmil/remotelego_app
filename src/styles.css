@@ -62,3 +62,42 @@ svg path,
 svg rect {
   fill: var(--text-primary-color);
 }
+
+.connect-btn{
+    margin-top:1rem;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    color: inherit;
+    /* cursor: default; */
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    outline: none;
+    -webkit-appearance: button; /* for input */
+    -webkit-user-select: none; /* for button */
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.connect-btn_image{
+    width: 5rem;
+}
+
+.connect-btn_animation{
+  animation-duration: 1s;
+  animation-name: scaleUpDown;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes scaleUpDown {
+  from {
+    transform: scale(1);
+  }
+  
+  to {
+    transform:scale(1.1);
+  }
+}
