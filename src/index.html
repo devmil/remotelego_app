@@ -1,56 +1,49 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>Lego Remote</title>
   <link rel="stylesheet" href="styles.css">
-  <base href="/">
-
-  {{#unless environment.production}}
-  <script src="/ember-cli-live-reload.js" type="text/javascript"></script>
-  {{/unless}}
+  <base href="/"> {{#unless environment.production}}
+  <script src="/ember-cli-live-reload.js" type="text/javascript"></script> {{/unless}}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
-<body>
-  <app-root>
-    <div class="startup-container">
-      <img src="favicon.png" height="50px" width="50px" />
 
-      <!-- taken from http://codepen.io/aurer/pen/jEGbA -->
-      <div class="loader loader--style3" title="2">
-        <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
-        <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
-          <animateTransform attributeType="xml"
-            attributeName="transform"
-            type="rotate"
-            from="0 25 25"
-            to="360 25 25"
-            dur="0.6s"
-            repeatCount="indefinite"/>
-          </path>
-        </svg>
-      </div>
-    </div>
-    <span class="startup-text">
+<body>
+  <app-root class="root">
+    <div class="startup-container">
+      <div class="startup-content">
+        <img src="favicon.png" height="50px" width="50px" />
+
+        <!-- taken from http://codepen.io/aurer/pen/jEGbA -->
+        <div class="loader loader--style3" title="2">
+          <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+            <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+              <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"
+              />
+            </path>
+          </svg>
+        </div>
+        <span class="startup-text">
       Remote control Lego cars using Bluetooth.
     </span>
+      </div>
+    </div>
+  </app-root>
 
-    </app-root>
-
-  
-
-    {{#each scripts.polyfills}}
-    <script src="{{.}}"></script>
-    {{/each}}
-    <script>
+  {{#each scripts.polyfills}}
+  <script src="{{.}}"></script> {{/each}}
+  <script>
       System.import('system-config.js').then(function () {
         System.import('main');
       }).catch(console.error.bind(console));
     </script>
 
-  
+
 
 </body>
+
 </html>

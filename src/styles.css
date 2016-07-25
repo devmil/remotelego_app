@@ -11,6 +11,10 @@
     --option-container-back-color: #FFFFFF;
     --button-shadow-color:   #000000;
 }
+.root{
+    display: flex;
+    flex:1;
+}
 
 html, body{
     margin: 0;
@@ -25,8 +29,14 @@ body{
 
 .startup-container {
     display: flex;
-    flex-direction: column;
     flex: 1 1 auto;
+    align-items: center;
+}
+
+.startup-content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
