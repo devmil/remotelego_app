@@ -1,20 +1,20 @@
 <div class="option-row">
-  <button class="option-btn" [disabled]="!model?.hasFrontLightFeature" (click)="model.frontLightIsEnabled = !model.frontLightIsEnabled"><img class="option-btn_image" src="assets/lights.svg"/></button>
-  <button class="option-btn" [disabled]="!model?.hasTrunkFeature" (click)="model.trunkIsOpen = !model.trunkIsOpen">
+  <button class="option-btn" [disabled]="!model?.hasFrontLightFeature" [ngClass]="{'option-active': model.frontLightIsEnabled}" (click)="model.frontLightIsEnabled = !model.frontLightIsEnabled"><img class="option-btn_image" src="assets/lights.svg"/></button>
+  <button class="option-btn" [disabled]="!model?.hasTrunkFeature" [ngClass]="{'option-active': model.trunkIsOpen}" (click)="model.trunkIsOpen = !model.trunkIsOpen">
     Trunk
   </button>
-  <button class="option-btn option-btn-disconnect" (click)="disconnect()">
+  <button class="option-btn option-btn-disconnect"  (click)="disconnect()">
     <img class="option-btn_image" src="assets/disconnect.svg"/>
   </button>
 </div>
 <div class="option-row">
-  <button class="option-btn" [disabled]="!model?.hasBlinkFeature" (click)="model.blinkLeft = !model.blinkLeft">
+  <button class="option-btn" [disabled]="!model?.hasBlinkFeature" [ngClass]="{'option-active': model.blinkLeft}" (click)="model.blinkLeft = !model.blinkLeft">
     <img class="option-btn_image" src="assets/blink_left.svg"/>
   </button>
-  <button class="option-btn" [disabled]="!model?.hasBlinkFeature" (click)="model.blinkRight = model.blinkLeft = !(model.blinkLeft && model.blinkRight)">
+  <button class="option-btn" [disabled]="!model?.hasBlinkFeature" [ngClass]="{'option-active': model.blinkRight && model.blinkLeft}" (click)="model.blinkRight = model.blinkLeft = !(model.blinkLeft && model.blinkRight)">
       <img class="option-btn_image" src="assets/warninglights.svg"/>
   </button>
-  <button class="option-btn" [disabled]="!model?.hasBlinkFeature" (click)="model.blinkRight = !model.blinkRight">
+  <button class="option-btn" [disabled]="!model?.hasBlinkFeature" [ngClass]="{'option-active': model.blinkRight}" (click)="model.blinkRight = !model.blinkRight">
     <img class="option-btn_image" src="assets/blink_right.svg"/>
   </button>
 </div>

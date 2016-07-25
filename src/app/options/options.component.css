@@ -11,9 +11,9 @@
 
 .option-btn{
     display: flex;
+    outline: none;
     cursor: pointer;
     margin: 5px;
-    /*flex:auto 1 0;*/
     border:1px solid black;
     color: #ffffff;
     border-radius: 3px 3px 3px 3px;
@@ -22,17 +22,19 @@
     font-family: Verdana;
     width: 6rem;
     height: 6rem;
-    /*height: auto;*/
     font-size: 12px;
-    /*padding: 10px 20px;*/
     box-shadow: 1px 1px 3px 0 var(--button-shadow-color);
     -moz-box-shadow: 1px 1px 3px 0 var(--button-shadow-color);
     -webkit-box-shadow: 1px 1px 3px 0 var(--button-shadow-color);
     text-shadow: 0 1px 2px #000000;
-    background-color: var(--default-primary-color);
+    background-color: var(--light-primary-color);
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
         box-sizing: content-box;
+}
+
+.option-btn.option-active{
+    background-color: var(--default-primary-color);
 }
 
 .option-btn_image{
