@@ -1,4 +1,21 @@
-# LegoRemoteNg2
+# LegoRemote WebApp
+
+This WebApp can control (Lego) remote controllable cars using this: https://github.com/devmil/remotelego
+
+A deployed version of this WebApp is reachable through https://devmil.github.io/remotelego_app/
+
+## Preparation
+For the client beeing able to use this WebApp some preconditions have to be met (limited by WebBluetooth):
+- Works only on Chrome
+- currently supported operating systems:  Android 6+, Chrome OS or Linux
+
+For getting informed about a nearby car that is remote controllable via this WebApp (or: to get the PhysicalWeb working on your device) you have to additionally:
+
+**Android**
+- enable "Nearby discoveries" under Settings->Google->Nearby discoveries
+- or: use the Physical Web app from the PlayStore (https://play.google.com/store/apps/details?id=physical_web.org.physicalweb)
+
+# Angular CLI information
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.6.
 
