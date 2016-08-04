@@ -210,7 +210,7 @@ export class LegoCar {
         .then(() => {
             successAction();
         })
-        .catch(() => {});
+        .catch((ex) => { console.error(ex, "Error writing characteristic value!"); });
     }
 
     private isDirty() : boolean {
@@ -360,6 +360,7 @@ export class LegoCar {
                 }),
         ])
         .catch(() => {
+            console.error("error transmitting data!!");
         })
         .then(() => {
             window.setTimeout(() => {             
