@@ -23,4 +23,6 @@ export class Protocol {
     public static get TRUNK_CHARACTERISTIC_UUID() : string { return "e0af3340-022e-47e1-a263-d68887dc41d4"; }
     public static get FRONT_LIGHT_CHARACTERISTIC_UUID() : string { return "fa10e4de-259e-4d23-9f59-45a9c66802ca"; }
     public static get BLINK_CHARACTERISTIC_UUID() : string { return "aad03b81-f2ea-47db-ae1e-7c2f9e86e93e"; }
+    public static get CONFIGURATION_DATA_CHARACTERISTIC_UUID() : string { return "2ac1fdb2-d971-4595-8e32-e8c5d80edf5f"; }
+    public static get CONFIGURATION_NAME_CHARACTERISTIC_UUID() : string { return "b394673e-dea0-4044-a189-86f1c85ce22e"; }
 } 

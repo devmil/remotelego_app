@@ -1,7 +1,7 @@
 import { Protocol, BlinkMode, FrontLightState, TrunkState } from './Protocol';
+import { LegoCarConfiguration } from './LegoCarConfiguration';
 
 export class LegoCar {
-
 
     private m_server : any;
     private m_service : any;
@@ -17,18 +17,22 @@ export class LegoCar {
 	private m_lastSentFrontLightIsEnabled : boolean;
     private m_blinkMode : BlinkMode =  BlinkMode.Off;
     private m_lastSentBlinkMode : BlinkMode = BlinkMode.Off;
+    private m_lastSentConfiguration : LegoCarConfiguration;
 
     private m_isInitialized : boolean = false;
     private m_hasTrunkFeature : boolean = false;
     private m_hasFrontLightFeature : boolean = false;
     private m_hasBlinkFeature : boolean = false;
-	
+
 	private m_isTransmitting : boolean;
+
+    private m_configuration : LegoCarConfiguration;
 
     constructor(server, service, name : string) {
         this.m_server = server;
         this.m_service = service;
         this.m_name = name;
+        this.m_configuration = new LegoCarConfiguration();
     }
 
     public initData() {
@@ -43,7 +47,37 @@ export class LegoCar {
 
             this.m_service.getCharacteristic(Protocol.BLINK_CHARACTERISTIC_UUID)
             .then((characteristic) => { this.m_hasBlinkFeature = true; })
-            .catch((e) => { this.m_hasBlinkFeature = false; })
+            .catch((e) => { this.m_hasBlinkFeature = false; }),
+
+            this.m_service.getCharacteristic(Protocol.CONFIGURATION_DATA_CHARACTERISTIC_UUID)
+            .then((characteristic) => {
+                if(characteristic != null) { 
+                    return characteristic.readValue();
+                }
+                return null;
+            })
+            .then((value) => {
+                if(value != null) {
+                    this.m_configuration.setDataBytes(value);
+                    this.m_lastSentConfiguration = this.m_configuration.clone();
+                }
+            })
+            .catch((e) => {  }),
+
+            this.m_service.getCharacteristic(Protocol.CONFIGURATION_NAME_CHARACTERISTIC_UUID)
+            .then((characteristic) => {
+                if(characteristic != null) { 
+                    return characteristic.readValue();
+                }
+                return null;
+            })
+            .then((value) => {
+                if(value != null) {
+                    this.m_configuration.setNameBytes(value);
+                    this.m_lastSentConfiguration = this.m_configuration.clone();
+                }
+            })
+            .catch((e) => {  })            
         ])
         .then((r) => { this.m_isInitialized = true; });
     }
@@ -58,6 +92,19 @@ export class LegoCar {
 
     public get hasBlinkFeature() : boolean {
         return this.m_hasBlinkFeature;
+    }
+
+    public get hasConfiguration() : boolean {
+        return (this.m_configuration != null) && (this.m_configuration.isInitialized);
+    }
+
+    public get configuration() : LegoCarConfiguration {
+        return this.m_configuration.clone();
+    }
+
+    public set configuration(configuration : LegoCarConfiguration) {
+        this.m_configuration = configuration;
+        this.transmitData();
     }
 
     public get steering() : number {
@@ -171,7 +218,9 @@ export class LegoCar {
 			|| this.m_lastSentSteering !== this.steering
 			|| this.m_lastSentTrunkIsOpen !== this.trunkIsOpen
 			|| this.m_lastSentFrontLightIsEnabled !== this.frontLightIsEnabled
-            || this.m_lastSentBlinkMode != this.blinkMode;
+            || this.m_lastSentBlinkMode != this.blinkMode
+            || !this.m_configuration.dataEquals(this.m_lastSentConfiguration)
+            || !this.m_configuration.nameEquals(this.m_lastSentConfiguration);
     }
 
     private transmitData() {
@@ -191,11 +240,14 @@ export class LegoCar {
         var l_trunkIsOpen = this.trunkIsOpen;
         var l_frontLightIsEnabled = this.frontLightIsEnabled
         var l_blinkMode = this.blinkMode;
+        var l_configuration = this.configuration.clone();
 
         Promise.all([
             this.transmitDataPromise(
                 Protocol.STEER_CHARACTERISTIC_UUID,
-                () => { return l_steering != this.m_lastSentSteering; },
+                () => { 
+                    return l_steering != this.m_lastSentSteering; 
+                },
                 () => {  
 					var angle = (l_steering * 90) / 100;
 
@@ -213,7 +265,9 @@ export class LegoCar {
 
             this.transmitDataPromise(
                 Protocol.SPEED_CHARACTERISTIC_UUID,
-                () => { return l_speed != this.m_lastSentSpeed; },
+                () => { 
+                    return l_speed != this.m_lastSentSpeed; 
+                },
                 () => {  
 					var speedData = new Uint8Array(1);
 					speedData[0] = Math.floor(l_speed);
@@ -229,7 +283,9 @@ export class LegoCar {
                 
             this.transmitDataPromise(
                 Protocol.TRUNK_CHARACTERISTIC_UUID,
-                () => { return this.hasTrunkFeature && l_trunkIsOpen != this.m_lastSentTrunkIsOpen; },
+                () => { 
+                    return this.hasTrunkFeature && l_trunkIsOpen != this.m_lastSentTrunkIsOpen; 
+                },
                 () => {  
 					var trunkData = new Uint8Array(1);
 					trunkData[0] = l_trunkIsOpen ? TrunkState.Open : TrunkState.Closed;
@@ -245,7 +301,9 @@ export class LegoCar {
 
             this.transmitDataPromise(
                 Protocol.FRONT_LIGHT_CHARACTERISTIC_UUID,
-                () => { return this.hasFrontLightFeature && l_frontLightIsEnabled != this.m_lastSentFrontLightIsEnabled; },
+                () => { 
+                    return this.hasFrontLightFeature && l_frontLightIsEnabled != this.m_lastSentFrontLightIsEnabled; 
+                },
                 () => {  
 					var frontLightData = new Uint8Array(1);
 					frontLightData[0] = l_frontLightIsEnabled ? FrontLightState.Active : FrontLightState.Hidden;
@@ -260,7 +318,9 @@ export class LegoCar {
 
             this.transmitDataPromise(
                 Protocol.BLINK_CHARACTERISTIC_UUID,
-                () => { return this.hasBlinkFeature && l_blinkMode != this.m_lastSentBlinkMode; },
+                () => { 
+                    return this.hasBlinkFeature && l_blinkMode != this.m_lastSentBlinkMode; 
+                },
                 () => {  
 					var blinkModeData = new Uint8Array(1);
 					blinkModeData[0] = l_blinkMode;
@@ -272,15 +332,40 @@ export class LegoCar {
                     this.m_lastSentBlinkMode = l_blinkMode;
 					console.log("Sent blink mode (" + l_blinkMode + ")");
                 }),
+            this.transmitDataPromise(
+                Protocol.CONFIGURATION_DATA_CHARACTERISTIC_UUID,
+                () => { 
+                    return this.hasConfiguration && !this.m_lastSentConfiguration.dataEquals(l_configuration); 
+                },
+                () => {  
+					console.log("Sending configuration data");
+                    return l_configuration.toDataBytes();
+                },
+                () => {
+                    this.m_lastSentConfiguration.takeDataFrom(l_configuration);
+					console.log("Sent configuration data");
+                }),
+            this.transmitDataPromise(
+                Protocol.CONFIGURATION_NAME_CHARACTERISTIC_UUID,
+                () => { 
+                    return this.hasConfiguration && !this.m_lastSentConfiguration.nameEquals(l_configuration); 
+                },
+                () => {  
+					console.log("Sending configuration name");
+                    return l_configuration.toNameBytesForSending();
+                },
+                () => {
+                    this.m_lastSentConfiguration.takeNameFrom(l_configuration);
+					console.log("Sent configuration name");
+                }),
         ])
         .catch(() => {
         })
         .then(() => {
-            window.setTimeout(() => 
-                {             
-                    this.m_isTransmitting = false;
-                    this.updateIfDirty();
-                }, 50); //wait a bit before the next data gets sent
+            window.setTimeout(() => {             
+                this.m_isTransmitting = false;
+                this.updateIfDirty();
+            }, 50); //wait a bit before the next data gets sent
         });
     }
 }
