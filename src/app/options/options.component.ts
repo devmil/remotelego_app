@@ -13,6 +13,7 @@ export class CarOptionsComponent implements OnInit {
 
   @Input()  model: LegoCar;
   @Output() onDisconnect = new EventEmitter<boolean>();
+  @Output() onEnterSettings = new EventEmitter<boolean>();
   constructor() { }
 
   ngOnInit() {
@@ -20,6 +21,10 @@ export class CarOptionsComponent implements OnInit {
 
   disconnect(){
     this.onDisconnect.emit(true);
+  }
+
+  enterSettings() {
+    this.onEnterSettings.emit(true);
   }
 
 }

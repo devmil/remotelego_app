@@ -11,9 +11,12 @@
       </button>
   </div>
 </div>
-<div class="option-container" *ngIf="currentModel">
-  <car-options (onDisconnect)="doDisconnect()" [model]="currentModel"></car-options>
+<div class="option-container" *ngIf="currentModel && !isInSettingsMode">
+  <car-options (onDisconnect)="doDisconnect()" (onEnterSettings)="doEnterSettings()" [model]="currentModel"></car-options>
 </div>
-<div class="control-container" *ngIf="currentModel">
+<div class="control-container" *ngIf="currentModel  && !isInSettingsMode">
   <car-control [model]="currentModel"></car-control>
+</div>
+<div class="settings-container" *ngIf="isInSettingsMode">
+  <car-settings (onLeaveSettings)="doLeaveSettings()" [model]="currentModel"></car-settings>
 </div>

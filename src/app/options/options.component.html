@@ -18,3 +18,8 @@
     <img class="option-btn_image" src="assets/blink_right.svg"/>
   </button>
 </div>
+<div class="option-row" *ngIf="model?.hasConfiguration">
+  <button class="option-btn" [disabled]="!model?.hasConfiguration" (click)="enterSettings()">
+    <img class="option-btn_image" src="assets/settings.svg"/>
+  </button>
+</div>

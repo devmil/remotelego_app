@@ -30,6 +30,12 @@
     align-items: center;
 }
 
+.settings-container {
+    background: var(--option-container-back-color);
+    display: flex;
+    align-items: center;
+}
+
 :host{
     display: flex;
     flex-flow: column nowrap;

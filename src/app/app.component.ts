@@ -3,6 +3,7 @@ import { LegoCar } from './shared/LegoCar';
 import { Utils } from './shared/Utils';
 import { CarControlComponent } from "./control/control.component";
 import { CarOptionsComponent} from "./options/options.component";
+import { CarSettingsComponent} from "./settings/settings.component";
 import { BluetoothDummy } from "./shared/BluetoothDummy";
 
 
@@ -11,13 +12,18 @@ import { BluetoothDummy } from "./shared/BluetoothDummy";
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  directives: [CarControlComponent, CarOptionsComponent]
+  directives: [CarControlComponent, CarOptionsComponent, CarSettingsComponent]
 })
 export class AppComponent {
   currentDevice: any = null;
   currentServer: any = null;
   currentModel: LegoCar = null;
+  private m_inSettingsMode : boolean = false;
   doesntSupportWebBluetooth: boolean = false;
+
+  public get isInSettingsMode() : boolean {
+    return this.m_inSettingsMode;
+  }
 
   constructor() {
     var nav : any = navigator;
@@ -77,6 +83,16 @@ export class AppComponent {
       }
     }
     this.deinit();
+  }
+
+  doEnterSettings() {
+    if(this.currentModel != null) {
+      this.m_inSettingsMode = true;
+    }
+  }
+
+  doLeaveSettings() {
+    this.m_inSettingsMode = false;
   }
 
   deinit() {
