@@ -54,7 +54,9 @@ export class AppComponent {
   }
 
   onGattDisconnected() {
-    this.deinit();
+    if(this.deinit) {
+      this.deinit();
+    }
   }
 
   isConnected(){
