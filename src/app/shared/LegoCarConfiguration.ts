@@ -33,18 +33,16 @@ export class LegoCarConfiguration {
 
     private m_Name : String;
 
-    private m_HasMovingFrontLights : boolean;
-    private m_HasTrunk : boolean;
-    private m_CanBlink : boolean;
+    private m_HasMovingFrontLights : boolean = false;
+    private m_HasTrunk : boolean = false;
+    private m_CanBlink : boolean = false;
 
-    private m_IsDataInitialized : boolean;
-    private m_IsNameInitialized : boolean;
+    private m_IsDataInitialized : boolean = false;
+    private m_IsNameInitialized : boolean = false;
 
     public static get NAME_LENGTH() { return 20; }
 
     public constructor() {
-        this.m_IsDataInitialized = false;
-        this.m_IsNameInitialized = false;
     }
 
     public clone() : LegoCarConfiguration {
@@ -65,6 +63,9 @@ export class LegoCarConfiguration {
     }
 
     public dataEquals(other : LegoCarConfiguration) : boolean {
+        if(other == null) {
+            return false;
+        }
         return this.m_CanBlink == other.m_CanBlink
             && this.m_HasMovingFrontLights == other.m_HasMovingFrontLights
             && this.m_HasTrunk == other.m_HasTrunk
@@ -87,6 +88,9 @@ export class LegoCarConfiguration {
     }
 
     public nameEquals(other : LegoCarConfiguration) : boolean {
+        if(other == null) {
+            return false;
+        }
         return this.m_Name == other.m_Name;
     }
 
