@@ -229,14 +229,16 @@ export class LegoCar {
                     var data: Uint8Array = getBytesAction();
                     return characteristic.writeValue(data);
                 }
-                return new Promise((resolve, reject) => { reject(); });
+                return Promise.reject(null);
             })
             .then(() => {
                 successAction();
                 return true;
             })
             .catch((ex) => { 
-                console.error(ex, "Error writing characteristic value! UUID=" + characteristicUUID); 
+                if(ex && ex != null) {
+                    console.error(ex, "Error writing characteristic value! UUID=" + characteristicUUID);
+                } 
             })
             .then(() => { return true });
         } else {
