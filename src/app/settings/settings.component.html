@@ -1,9 +1,44 @@
 <div>
-  Settings
+  <h1>Settings</h1>
 </div>
-<div class="settings-row">
+<div class="settings-wrapper">
+  <div class="settings-row">
+    <label for="name">What´s the name?</label>
+    <input type="text" class="form-control" id="name" required [(ngModel)]="config.name" name="name">
+  </div>
+  <div class="settings-row">
+    <input type="checkbox" class="form-control" id="hasMovingFrontLights" [(ngModel)]="config.hasMovingFrontLights" name="hasMovingFrontLights">
+    <label for="hasMovingFrontLights">Has moving front lights?</label>
+  </div>
+  <div class="settings-row">
+    <input type="checkbox" class="form-control" id="hasTrunk" [(ngModel)]="config.hasTrunk" name="hasTrunk"> <label for="hasTrunk">Has a trunk?</label>
+  </div>
+  <div class="settings-row">
+    <input type="checkbox" class="form-control" id="canBlink" [(ngModel)]="config.canBlink" name="canBlink"> <label for="canBlink">Can blink?</label>
+  </div>
+  <div class="settings-row">
+    <input type="checkbox" class="form-control" id="isSteeringInverted" [(ngModel)]="config.isSteeringInverted" name="isSteeringInverted">
+    <label for="isSteeringInverted">Is steering inverted?</label>
+  </div>
+  <div class="settings-row">
+    <label for="maxSteeringAnglePositive">Max positive steering angle?</label>
+    <input type="number" class="form-control" id="maxSteeringAnglePositive" [(ngModel)]="config.maxSteeringAnglePositive" name="maxSteeringAnglePositive">
+  </div>
+  <div class="settings-row">
+    <label for="maxSteeringAngleNegative">Max negative steering angle?</label>
+    <input type="number" class="form-control" id="maxSteeringAngleNegative" [(ngModel)]="config.maxSteeringAngleNegative" name="maxSteeringAngleNegative">
+  </div>
+  <div class="settings-row">
+    <label for="steeringOffset">Steering offset?</label>
+    <input type="number" class="form-control" id="steeringOffset" [(ngModel)]="config.steeringOffset" name="steeringOffset">
+  </div>
 </div>
-<div>
-  <button (click)="doSave()">Save</button>
-  <button (click)="doDiscard()">Discard</button>
+<div class="settings-actions">
+  <button class="settings-action" (click)="doSave()">Save</button>
+  <button class="settings-action" (click)="doDiscard()">Discard</button>
+</div>
+<div *ngIf="validationMessages" class="settings-validationMessages">
+  <ul>
+    <li *ngFor="let msg of validationMessages">{{msg.message}}</li>
+  </ul>
 </div>

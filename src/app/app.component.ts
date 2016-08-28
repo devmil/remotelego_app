@@ -18,11 +18,11 @@ export class AppComponent {
   currentDevice: any = null;
   currentServer: any = null;
   currentModel: LegoCar = null;
-  private m_inSettingsMode : boolean = false;
+  private m_inSettingsMode : boolean = true;
   doesntSupportWebBluetooth: boolean = false;
 
   public get isInSettingsMode() : boolean {
-    return this.m_inSettingsMode;
+    return this.currentModel && this.m_inSettingsMode;
   }
 
   constructor() {

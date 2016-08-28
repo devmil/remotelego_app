@@ -1,5 +1,27 @@
 :host{
     flex:1;
     display: flex;
-	padding-top: 0.25rem;
+	padding: 0.25rem;
+    flex-flow: column;
+}
+
+.settings-wrapper{
+    /*flex:1;*/
+}
+
+.settings-row{
+    padding: 0.25rem;
+    margin: 0.25rem 0;
+}
+
+.settings-row input[type=text],.settings-row input[type=number]{
+    display: block;
+}
+
+.settings-actions{
+    margin-top: 2rem;
+}
+
+.settings-action{
+    font-size: 1.5rem;
 }

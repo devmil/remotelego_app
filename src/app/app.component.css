@@ -33,7 +33,7 @@
 .settings-container {
     background: var(--option-container-back-color);
     display: flex;
-    align-items: center;
+    flex:1;
 }
 
 :host{
