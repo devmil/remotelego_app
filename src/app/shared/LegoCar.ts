@@ -325,7 +325,7 @@ export class LegoCar {
         )
 
         .then( (r) => {
-            this.transmitDataPromise(
+            return this.transmitDataPromise(
                 Protocol.TRUNK_CHARACTERISTIC_UUID,
                 () => { return this.m_hasTrunkFeature },
                 () => { 
@@ -347,7 +347,7 @@ export class LegoCar {
         )
 
         .then((r) => {
-            this.transmitDataPromise(
+            return this.transmitDataPromise(
                 Protocol.FRONT_LIGHT_CHARACTERISTIC_UUID,
                 () => { return this.m_hasFrontLightFeature },
                 () => { 
@@ -368,7 +368,7 @@ export class LegoCar {
         )
 
         .then((r) => {
-            this.transmitDataPromise(
+            return this.transmitDataPromise(
                 Protocol.BLINK_CHARACTERISTIC_UUID,
                 () => { return this.m_hasBlinkFeature },
                 () => { 
@@ -389,7 +389,7 @@ export class LegoCar {
         )
 
         .then((r) => {
-            this.transmitDataPromise(
+            return this.transmitDataPromise(
                 Protocol.CONFIGURATION_DATA_CHARACTERISTIC_UUID,
                 () => { return this.hasConfiguration },
                 () => { 
@@ -407,7 +407,7 @@ export class LegoCar {
         )
 
         .then((r) => {
-            this.transmitDataPromise(
+            return this.transmitDataPromise(
                 Protocol.CONFIGURATION_NAME_CHARACTERISTIC_UUID,
                 () => { return this.hasConfiguration },
                 () => { 
